@@ -7,6 +7,7 @@ The program simulates the problem of finding the shortest path from a Start Node
 For solving this problem, the program uses three graph algorithms Depth First Search (DFS), Breath First Search (BFS), and Dijkstra.
 
 2. How to use 
+
 2.1 Selecting the Algorithm for Solving the Problem
 
 In the top left corner, the program shows the current algorithm used for solving the problem, pressing the ‘Alt’ key on the keyboard will change the algorithm.
