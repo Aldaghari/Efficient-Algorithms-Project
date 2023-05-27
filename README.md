@@ -1,6 +1,6 @@
 # Efficient-Algorithms-Project
 
-1. Introduction 
+1.  Introduction 
 
 The program simulates the problem of finding the shortest path from a Start Node to an End Node (points A to B).  
 
