@@ -6,15 +6,19 @@ For solving this problem, the program uses three graph algorithms Depth First Se
 
 2. How to use
 2.1 Selecting the Algorithm for Solving the Problem
+
 In the top left corner, the program shows the current algorithm used for solving the problem, pressing the ‘Alt’ key on the keyboard will change the algorithm.
 
 2.2 Placing a Start Node
+
 Hovering the mouse over a cell and pressing the ‘S’ key on the keyboard will place a Start Node.
 
 2.3 Placing an End Node
+
 Hovering the mouse over a cell and pressing the ‘E’ key on the keyboard will place an End Node.
 
 2.4 Adding Obstacles
+
 Hovering over cells and pressing and holding the ‘Left mouse button’ will add obstacles to the hovered cells.
 
 2.4 Adding Junctions
