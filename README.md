@@ -1,12 +1,12 @@
 # Efficient-Algorithms-Project
 
-1. Introduction 
+1.Introduction 
 
 The program simulates the problem of finding the shortest path from a Start Node to an End Node (points A to B).  
 
 For solving this problem, the program uses three graph algorithms Depth First Search (DFS), Breath First Search (BFS), and Dijkstra.
 
-2. How to use 
+2.How to use 
 
 2.1 Selecting the Algorithm for Solving the Problem
 
