@@ -1,8 +1,6 @@
 #include <iostream>
-#include <map>
 #include <vector>
 #include <queue>
-#include <set>
 #include <algorithm>
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
@@ -149,41 +147,6 @@ void DijkstraQ(Graph& graph, int Source, int EndNode, int Parent = -1) {
 }
 
 
-void Dijkstra(Graph& graph, int Source, int EndNode, int Parent = -1) {
-    set<int>NodesToProcess;
-    graph.state[Source] = Start;
-    graph.distance[Source] = 0;
-    graph.parent[Source] = Parent;
-    while (true) {
-        if (graph.state[Source] != Start)
-            graph.state[Source] = Visited;
-        for (pair<int, int> NodeAndWeight : graph.adj_weighted[Source]) {
-            int Node = NodeAndWeight.first;
-            int Weight = NodeAndWeight.second;
-            // Skip if the node is visited or is an obstcale
-            if (graph.state[Node] == Visited || graph.state[Node] == Obstacle)
-                continue;
-            NodesToProcess.insert(Node);
-            int NetWeight = graph.distance[Source] + Weight;
-            if (NetWeight < graph.distance[Node]) {
-                graph.distance[Node] = NetWeight;
-                graph.parent[Node] = Source;
-            }
-        }
-        if (!graph.found && NodesToProcess.count(EndNode))
-            graph.found = 1;
-        NodesToProcess.erase(Source);
-        if (NodesToProcess.empty())
-            break;
-        int Max = 0x7FFFFFFF;
-        for (int Nodes : NodesToProcess)
-            if (graph.distance[Nodes] < Max) {
-                Max = graph.distance[Nodes];
-                Source = Nodes;
-            }
-    }
-}
-
 /**
  * @brief Get you the path whether you ran BFS, DFS or Dijkstra on the graph.
  *
@@ -220,7 +183,7 @@ struct World {
     World(sf::RenderWindow& window, sf::Font& arialFont) {
         // settings
         windowSize = window.getSize();
-        cellWidth = 24;
+        cellWidth = 20;
         worldWidth = windowSize.x / cellWidth;
         worldHeight = windowSize.y / cellWidth;
 
@@ -294,7 +257,7 @@ struct World {
                     text.setString("Dijkstra");
                     break;
                 case 2:
-                    text.setString("DijkstraQ");
+                    text.setString("DFS");
                     break;
                 default:
                     break;
@@ -309,10 +272,10 @@ struct World {
                         BreadthFirstSearch(graph, startIndex, endIndex);
                         break;
                     case 1:
-                        Dijkstra(graph, startIndex, endIndex);
+                        DijkstraQ(graph, startIndex, endIndex);
                         break;
                     case 2:
-                        DijkstraQ(graph, startIndex, endIndex);
+                        DepthFirstSearch(graph, startIndex, endIndex);
                         break;
                     default:
                         break;
@@ -439,15 +402,13 @@ struct World {
 };
 
 int main() {
-    sf::err().rdbuf(NULL);
     std::cout << "Welcome to Our Project \n" << "How to use: \n"
         << "'S': Set a starting node,     'E': Set an ending node\n"
         << "'R': Restart,                 'Enter' : Run(only after setting starting and ending points)\n"
         << "'Left Mouse': Add obstacle,   'Right Mouse': Add Junction(Adds weight of 2 to all edges connected to the cell)\n"
         << "'Shift': Remove Node\n"
         << "'Alt': Switch Mode" << std::endl;
-    sf::RenderWindow window(sf::VideoMode(1920, 1080), "EA Project", sf::Style::Fullscreen);
-    window.setFramerateLimit(60);
+    sf::RenderWindow window(sf::VideoMode(1280, 720), "EA Project", sf::Style::Default);
 
     sf::Font arialFont;
     World world(window, arialFont);
