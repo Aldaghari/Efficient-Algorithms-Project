@@ -1,6 +1,8 @@
 # Efficient-Algorithms-Project
 
-![Alt Text](https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif)
+Working example:
+
+![Alt Text](BFS.gif)
 
 1.Introduction 
 
