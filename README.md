@@ -4,6 +4,9 @@ Working example:
 
 ![Alt Text](BFS.gif)
 
+![Alt Text](Dijikstra.gif)
+
+
 1.Introduction 
 
 The program simulates the problem of finding the shortest path from a Start Node to an End Node (points A to B).  
