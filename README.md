@@ -2,8 +2,12 @@
 
 Working example:
 
+The blue square is the starting point, red ending point, green are obstacles.
+Doing a BFS:
 ![Alt Text](BFS.gif)
 
+Doing Dijikstra (Dark red are junctions)
+Notice how Dijikstra avoids junctions and finds a path shorter path.
 ![Alt Text](Dijikstra.gif)
 
 
