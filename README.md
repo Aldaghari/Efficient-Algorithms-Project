@@ -1,6 +1,6 @@
 # Efficient-Algorithms-Project
 
-Built with SFML
+Built with SFML, and with help of my group members.
 
 Working example:
 
