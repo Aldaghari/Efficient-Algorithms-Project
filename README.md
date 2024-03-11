@@ -1,5 +1,7 @@
 # Efficient-Algorithms-Project
 
+Built with SFML
+
 Working example:
 
 The blue square is the starting point, red ending point, green are obstacles.
